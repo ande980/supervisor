@@ -191,7 +191,7 @@ func cgroups() error {
 	mem := filepath.Join(cgroups, "memory")
 	os.Mkdir(mem, 0755)
 
-	if err := ioutil.WriteFile(filepath.Join(mem, "memory.limit_in_bytes"), []byte(""), 0700); err != nil {
+	if err := ioutil.WriteFile(filepath.Join(mem, "memory.limit_in_bytes"), []byte("104857600"), 0700); err != nil {
 		return fmt.Errorf("setting mem limit: %v", err)
 	}
 
